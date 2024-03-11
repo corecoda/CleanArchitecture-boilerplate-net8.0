@@ -15,6 +15,17 @@ The `src` folder encapsulates the core implementation of the application. It is 
 3. **Persistence**: Implements interfaces and repositories defined in the Application layer, utilizing frameworks like Entity Framework or Dapper.
 4. **Infrastructure**: Houses the software logic responsible for communication with the Data Plane through a software interface.
 
+## Extension Classes
+
+In order to reduce the code clutter in the `program.cs` class, extension classes have been introduced to each of the class libraries. These extensions include:
+
+- `PersistenceServiceRegistration`
+- `ApplicationServiceRegistration`
+- `SwaggerServiceRegistration`
+- `InfrastructureServicesRegistration`
+
+These extensions aim to enhance code organization and readability by abstracting service registrations into separate files within each class library.
+
 ### test
 
 The `test` folder contains the test project, enabling comprehensive testing of the application's functionalities.
