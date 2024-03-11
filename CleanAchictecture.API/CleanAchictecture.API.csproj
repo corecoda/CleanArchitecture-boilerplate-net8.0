@@ -8,14 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\CleanAchictecture.Application\CleanAchictecture.Application.csproj" />
     <ProjectReference Include="..\CleanAchictecture.Infrastructure\CleanAchictecture.Infrastructure.csproj" />
     <ProjectReference Include="..\CleanAchictecture.Persistence\CleanAchictecture.Persistence.csproj" />
-    <ProjectReference Include="..\CleanAchictectureProjectStructure.Application\CleanAchictecture.Application.csproj" />
   </ItemGroup>
 
 </Project>

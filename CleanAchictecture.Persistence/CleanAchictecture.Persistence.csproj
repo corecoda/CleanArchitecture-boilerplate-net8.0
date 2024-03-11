@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanAchictectureProjectStructure.Application\CleanAchictecture.Application.csproj" />
-    <ProjectReference Include="..\CleanAchictectureProjectStructure.Domain\CleanAchictecture.Domain.csproj" />
+    <ProjectReference Include="..\CleanAchictecture.Application\CleanAchictecture.Application.csproj" />
+    <ProjectReference Include="..\CleanAchictecture.Domain\CleanAchictecture.Domain.csproj" />
   </ItemGroup>
 
 </Project>
