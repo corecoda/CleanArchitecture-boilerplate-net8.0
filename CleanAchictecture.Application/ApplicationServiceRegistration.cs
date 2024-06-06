@@ -22,19 +22,7 @@ namespace CleanAchitecture.Application
             //    .SetIsOriginAllowed(origin => true) // allow any origin
             //    .AllowCredentials()); // allow credentials
 
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
-                context.Response.Headers.Add("X-Frame-Options", "DENY");
-                context.Response.Headers.Add("Cache-control", "no-store");
-                context.Response.Headers.Add("Pragma", "no-cache");
-                context.Response.Headers.Add("Referrer-Policy", "no-referrer-when-downgrade");
-                context.Response.Headers.Add("Strict-Transport-Security", "max-age=31536000;includeSubDomains;");
-                context.Response.Headers.Add("X-Permitted-Cross-Domain-Policies", "none");
-                context.Response.Headers.Add("Content-Security-Policy", "unsafe-inline 'self'");
-                context.Response.Headers.Add("Feature-Policy", "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none';");
-                await next();
-            });
+            
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
