@@ -1,5 +1,27 @@
 # .NET Clean Architecture Project Structure
 
+
+# Database Integration Enhancement 🚀
+
+## Overview
+
+We're thrilled to announce a significant enhancement to our application: the integration with various databases including Oracle, MySQL, MSSQL, and PostgreSQL! This expansion unlocks new possibilities and empowers our application to thrive in diverse environments.
+
+## Folder Structure
+
+To streamline our database operations and ensure clarity, we've organized our database contexts within a dedicated folder named `DbContext`. This structured approach enhances manageability and simplifies navigation within our codebase.
+
+## Migration Script
+
+### Running Migrations
+
+To facilitate seamless migration management across different database contexts, we've devised a straightforward script. Below is an example of how to execute migrations for the MSSQL database context:
+
+`bash`
+add-migration InitialAspNetIdentityMigration -c MsSqlDatabaseContext
+update-database -context MsSqlDatabaseContext
+
+
 This repository provides a structured approach to kickstart your .NET projects, facilitating faster development and eliminating the initial project structuring hurdles by employing the clean architecture pattern.
 
 ## Repository Structure
