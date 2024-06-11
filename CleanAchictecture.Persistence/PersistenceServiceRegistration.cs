@@ -1,4 +1,7 @@
 ﻿using CleanAchictecture.Persistence.DatabaseContexts;
+using CleanAchictecture.Persistence.Repositories;
+using CleanAchitecture.Application.Contracts.Persistence;
+using CleanAchitecture.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,10 +28,19 @@ namespace CleanAchitecture.Persistence
                 options.UseOracle(configuration.GetConnectionString("OracleDatabaseConnectionString"));
             });
 
-            services.AddDbContext<OracleDatabaseContext>(options =>
+            services.AddDbContext<PostgresDatabaseContext>(options =>
             {
                 options.UseNpgsql(configuration.GetConnectionString("OracleDatabaseConnectionString"));
             });
+
+
+            services.AddTransient<MsSqlDatabaseContext>();
+            services.AddTransient<MySqlDatabaseContext>();
+            services.AddTransient<OracleDatabaseContext>();
+            services.AddTransient<PostgresDatabaseContext>();
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IUserRepository, UserRepository>();
 
             return services;
         }
